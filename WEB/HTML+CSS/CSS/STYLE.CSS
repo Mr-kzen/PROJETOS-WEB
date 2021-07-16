@@ -17,14 +17,12 @@ body a{
     float: right;
 }
 header{
-        max-width: 100%;
-        
+        max-width: 100%;   
         height: auto;
-
         padding: 10px;
-
         color: white;
         background-color: #333;
+        
     }
 
     /*Configuração dos menus/sub*/
@@ -51,7 +49,7 @@ header{
         list-style-type: none;
         padding: 6px;
         display: none;
-
+        left: 5.2rem;
         border-radius: 10px;
     }
     .dropdown_submenu-item{
@@ -65,25 +63,35 @@ header{
 
 main{
     padding: 10px;
-    margin: 0.5rem 4rem;
-    border-radius: 10px;
-
+    margin: 2rem 4rem;
     font-size: 1rem;
+}
+main div{ 
+    height: auto;
+    padding: 5px;
+    border-radius: 10px;
 }
 .par{
     background-color: rgb(61, 60, 58);
-    padding: 10px;
     border-radius: 10px;
+    display: inline-flex;
+    margin: 0.3rem 0 0.3rem 0;
+    
 }
 
 .impar{
     background-color: rgb(112, 111, 108);
-    padding: 10px;
-    margin-top: 3px;
-    border-radius: 10px;
-    text-align: right;
+    margin: 1rem 0 1rem 0;
+    display: inline-flex;
 }
 
+
+
+/*MAIN IMAGENS*/
+main div img{
+    width: auto;
+    height: 10rem;
+}
 /*Configuração do FOOTER*/
 
 footer{
@@ -115,4 +123,52 @@ footer{
     border-top: 1px solid #fff;
 
     padding-top: 9px;
+}
+
+@media (max-width: 821px){
+            /*Header*/
+    header{
+        display: block;
+        height: 5.5rem;
+    }
+    .banner{
+        float: none;
+    }
+    .dropdown_menu{
+        float: right;
+    }
+
+    .dropdown_submenu{
+        left: auto;
+        right: 7.4rem;
+    }
+
+/*------------------------------------------------*/
+            /*main*/
+    main{
+        margin: 0;
+    }
+    .par{
+        display: block;
+        text-align: center;
+        float: none;
+    }
+    .impar{
+        padding: 0.4rem;
+        text-align: center;
+        display: block;
+    }
+
+/*-----------------------------------------------*/
+            /*Footer*/
+        .footer_inf{
+            display: block;
+        }
+        .footer_inf-item{
+            width: 100%;
+            height: auto;
+        }
+        .footer_inf-item p{
+            text-align: left;
+        }
 }
