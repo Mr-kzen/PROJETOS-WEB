@@ -3,28 +3,25 @@
     padding: 0;
     margin: 0;
 }
-
 body{
     margin: 2px solid #333;
 }
-
 body a{
     text-decoration: none;
     color: #fff;
 }
 /*Configuração do HEADER*/
-.banner {
-    float: right;
-}
 header{
         max-width: 100%;   
         height: auto;
         padding: 10px;
+
         color: white;
         background-color: #333;
-        
-    }
 
+        display: flex;
+        justify-content: space-between;
+    }
     /*Configuração dos menus/sub*/
     .dropdown{ 
         margin-top: 0.8rem;
@@ -45,11 +42,14 @@ header{
     /*Submenus*/
     .dropdown_submenu{
         background-color: #333;
+
         position: absolute;
+
         list-style-type: none;
         padding: 6px;
         display: none;
-        left: 5.2rem;
+
+        border: 1px solid white;
         border-radius: 10px;
     }
     .dropdown_submenu-item{
@@ -66,27 +66,29 @@ main{
     margin: 2rem 4rem;
     font-size: 1rem;
 }
-main div{ 
-    height: auto;
-    padding: 5px;
+.par, .impar{
+
     border-radius: 10px;
-}
-.par{
-    background-color: rgb(61, 60, 58);
-    border-radius: 10px;
-    display: inline-flex;
     margin: 0.3rem 0 0.3rem 0;
     
+    padding: 10px;
+    align-items: center;
+    
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 0.5rem;
 }
-
+.par{
+    background-color: rgb(61, 60, 58);   
+}
 .impar{
     background-color: rgb(112, 111, 108);
-    margin: 1rem 0 1rem 0;
-    display: inline-flex;
 }
 
-
-
+main h1{
+    margin-bottom: 4px;
+    text-align: center;
+}
 /*MAIN IMAGENS*/
 main div img{
     width: auto;
