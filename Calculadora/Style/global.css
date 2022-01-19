@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    --cinza: #575757;
+    --preto: #111111;
+    --white: #FFFFFF;
+    --blue: #34648A;
+}
+
+.button{
+    width: 25%;
+    height: 9.7vh;
+
+    border: .1rem solid var(--cinza);
+
+    color: var(--white);
+}
