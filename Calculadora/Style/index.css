@@ -104,12 +104,6 @@ main{
 .btn_especial{
     background-color: rgba(51, 51, 51, 0.664);;
 }
-.button.igual{
+.button#igual{
     background-color: var(--blue);
-}
-
-.camada .button:hover{
-    background-color: rgba(255, 255, 255, 0.411);
-
-    cursor: pointer;
 }

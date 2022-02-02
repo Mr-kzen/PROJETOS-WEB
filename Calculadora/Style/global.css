@@ -21,3 +21,8 @@ html{
 
     color: var(--white);
 }
+.button:hover, .fun-especial-itens:hover{
+    filter: brightness(2);
+    background-color: transparent;
+    
+}

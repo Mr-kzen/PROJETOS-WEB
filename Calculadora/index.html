@@ -15,10 +15,13 @@
     <!-- fonts -->
     <link rel = "preconnect" href = "https://fonts.googleapis.com">
     <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
-    <link href = "https://fonts.googleapis.com/css2? family=Poppins:wght@400;500&display = swap "rel =" stylesheet ">
+    <link href = "https://fonts.googleapis.com/css2? family=Poppins:wght@400&display = swap "rel =" stylesheet ">
 
     <!-- scripts -->
+    <script src="/Script/script.js"></script>
 
+    <!-- Correção do erro Faviicon! Ainda não faço ideia do que seja! -->
+    <link rel="shortcut icon" href="#">
     
 </head>
 
@@ -29,147 +32,142 @@
             <div class="cla_funcao">
 
                 <div class="conf">
-                    <p>Hamburgue</p>
-                    <h2>Padrão</h2>
-                    <p>Icon</p>
+                    <h2>Calculadora Padrão do Windows</h2>
                 </div>
 
                 <div class="visor">
-                    <div class="resultador">
-                        0
+                    <div class="resultado" id="result">
+                        
                     </div>
                 </div>
 
 
                 <div class="teclado">
+
                     <div class="fun-especial">
-                        <button class="fun-especial-itens fun-especial-itens-2">
+                        <button class="fun-especial-itens fun-especial-itens-2" onclick="especial('mc')">
                             MC
                         </button>
-                        <button class="fun-especial-itens fun-especial-itens-2">
+                        <button class="fun-especial-itens fun-especial-itens-2" onclick="especial('mr')">
                             MR
                         </button>
-                        <button class="fun-especial-itens">
+                        <button class="fun-especial-itens" onclick="especial('m+')">
                             M+
                         </button>
 
-                        <button class="fun-especial-itens">
+                        <button class="fun-especial-itens" onclick="especial('m-')">
                             M-
                         </button>
 
-                        <button class="fun-especial-itens">
+                        <button class="fun-especial-itens" onclick="especial('ms')">
                             MS
-                        </button>
-
-                        <button class="fun-especial-itens">
-                            M
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button porcentagem btn_especial">
+                        <button class="button btn_especial" onclick="caracter('porcentagem')">
                             %
                         </button>
 
-                        <button class="button CE btn_especial">
+                        <button class="button btn_especial" onclick="back()">
                             CE
                         </button>
 
-                        <button class="button C btn_especial">
+                        <button class="button btn_especial" onclick="clean()">
                             C
                         </button>
 
-                        <button class="button delet btn_especial">
+                        <button class="button delet btn_especial" onclick="back('delete')">
                             DELETE
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button 1/x btn_especial">
+                        <button class="button btn_especial" onclick="caracter('1x')">
                             1/x
                         </button>
 
-                        <button class="button X2 btn_especial">
+                        <button class="button X2 btn_especial" onclick="caracter('xQuadrado')">
                             x²
                         </button>
 
-                        <button class="button raiz2 btn_especial">
+                        <button class="button raiz2 btn_especial" onclick="caracter('raiz')">
                             raiz²
                         </button>
 
-                        <button class="button devisao btn_especial">
+                        <button class="button divisao btn_especial" onclick="caracter('div')">
                             DIV
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button sete btn_number">
+                        <button class="button btn_number" onclick="calcular('7')">
                             7
                         </button>
 
-                        <button class="button oito btn_number">
+                        <button class="button btn_number" onclick="calcular('8')">
                             8
                         </button>
  
-                        <button class="button nove btn_number">
+                        <button class="button btn_number" onclick="calcular('9')">
                             9
                         </button>
 
-                        <button class="button multiplicar btn_especial">
+                        <button class="button btn_especial" onclick="calcular('*')">
                             X
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button quatro btn_number">
+                        <button class="button btn_number" onclick="calcular('4')">
                             4
                         </button>
 
-                        <button class="button cinco btn_number">
+                        <button class="button btn_number" onclick="calcular('5')">
                             5
                         </button>
 
-                        <button class="button seis btn_number">
+                        <button class="button btn_number" onclick="calcular('6')">
                             6
                         </button>
 
-                        <button class="button subtrair btn_especial">
+                        <button class="button btn_especial" onclick="calcular('-')">
                             -
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button um btn_number">
+                        <button class="button btn_number" onclick="calcular('1')">
                             1
                         </button>
 
-                        <button class="button dois btn_number">
+                        <button class="button btn_number" onclick="calcular('2')">
                             2
                         </button>
 
-                        <button class="button tres btn_number">
+                        <button class="button btn_number" onclick="calcular('3')">
                             3
                         </button>
 
-                        <button class="button soma btn_especial">
+                        <button class="button btn_especial" onclick="calcular('+')">
                             +
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button mais-com-menos btn_number">
+                        <button class="button btn_number" onclick="caracter('maisOuMenos')">
                             +/-
                         </button>
 
-                        <button class="button zero btn_number">
+                        <button class="button btn_number" onclick="calcular('0')">
                             0
                         </button>
 
-                        <button class="button virgula btn_number">
+                        <button class="button btn_number" onclick="calcular('.')">
                             ,
                         </button>
 
-                        <button class="button igual" >
+                        <button class="button" id="igual" onclick="result()">
                             =
                         </button>
                     </div>
