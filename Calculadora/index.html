@@ -36,8 +36,11 @@
                 </div>
 
                 <div class="visor">
-                    <div class="resultado" id="result">
-                        
+                    <div class="passos" id="result">
+                    
+                    </div>
+                    <div class="resultado" id="resultclick">
+
                     </div>
                 </div>
 
@@ -65,37 +68,37 @@
                     </div>
 
                     <div class="camada">
-                        <button class="button btn_especial" onclick="caracter('porcentagem')">
+                        <button class="button btn_especial" onclick="caracter('porcentagem')" style="background-color: red;">
                             %
                         </button>
 
-                        <button class="button btn_especial" onclick="back()">
+                        <button class="button btn_especial" onclick="clean('ce')" style="background-color: red;">
                             CE
                         </button>
 
-                        <button class="button btn_especial" onclick="clean()">
+                        <button class="button btn_especial" onclick="clean('c')">
                             C
                         </button>
 
-                        <button class="button delet btn_especial" onclick="back('delete')">
+                        <button class="button delet btn_especial" onclick="clean('delete')">
                             DELETE
                         </button>
                     </div>
 
                     <div class="camada">
-                        <button class="button btn_especial" onclick="caracter('1x')">
+                        <button class="button btn_especial" onclick="caracter('1x')" style="background-color: red;">
                             1/x
                         </button>
 
-                        <button class="button X2 btn_especial" onclick="caracter('xQuadrado')">
+                        <button class="button X2 btn_especial" onclick="caracter('xQuadrado')" style="background-color: red;">
                             x²
                         </button>
 
-                        <button class="button raiz2 btn_especial" onclick="caracter('raiz')">
+                        <button class="button raiz2 btn_especial" onclick="caracter('raiz')" style="background-color: red;">
                             raiz²
                         </button>
 
-                        <button class="button divisao btn_especial" onclick="caracter('div')">
+                        <button class="button divisao btn_especial" onclick="caracter('/')" style="background-color: red;">
                             DIV
                         </button>
                     </div>
@@ -155,7 +158,7 @@
                     </div>
 
                     <div class="camada">
-                        <button class="button btn_number" onclick="caracter('maisOuMenos')">
+                        <button class="button btn_number" onclick="trans('maisOuMenos')">
                             +/-
                         </button>
 
@@ -178,9 +181,12 @@
 
 
             <div class="historico">
-                <h2>histórico</h2>
 
-                <p>Ainda não há histórico</p>
+                <h2>histórico</h2>
+                
+                <div id="historicos">
+                    <p id="resultado">Ainda não há histórico</p>
+                </div>
             </div>
 
             
