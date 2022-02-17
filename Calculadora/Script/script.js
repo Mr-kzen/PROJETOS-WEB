@@ -32,11 +32,18 @@ function calcular(click) {// imprime o que está sendo feito!
         document.querySelector("#resultclick").innerHTML = resultado.toFixed(15)
     } 
     else if(click == "pct"){
-        document.querySelector("#resultclick").innerHTML = document.querySelector("#resultclick").innerHTML / 100
+        if(document.querySelector("#result").innerHTML != "" ){
+            document.querySelector("#resultclick").innerHTML = document.querySelector("#resultclick").innerHTML / 100
+            document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML
+        }else{
+            document.querySelector("#result").innerHTML = "0"
+            document.querySelector("#resultclick").innerHTML = "0"
+        }
     } 
     else if(click == "1/x"){
         document.querySelector("#result").innerHTML += "1/( "+ document.querySelector("#resultclick").innerHTML + " )="
-        document.querySelector("#resultclick").innerHTML = 1 / Number(resultado)
+
+        document.querySelector("#resultclick").innerHTML = (1 / parseFloat(resultado)).toFixed(15)
     }
     else if (click == "raiz2") {
 
@@ -50,23 +57,21 @@ function calcular(click) {// imprime o que está sendo feito!
     }
 }
 
-function result() {//retorna o resultado final
+function igual() {//retorna o resultado final
 
-    var resultado = document.querySelector("#result").innerHTML
+    const resultado = document.querySelector("#result").innerHTML
 
     resultado.replace(",", ".");
     resultado.replace("x", "*")
 
     if (resultado) {
-
-        console.log(resultado.search("raiz") > 0 || resultado.search("1/") > 0)
-        if (resultado.search("r") >= 0) {
+        if (resultado.search("raiz") >= 0 || resultado.search("1/") >= 0) {
 
         } else {
             document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML
-
-            document.querySelector("#resultclick").innerHTML = eval(resultado)
-            document.querySelector("#result").innerHTML += '='
+            console.log(document.querySelector("#result").innerHTML)
+            document.querySelector("#resultclick").innerHTML = eval(document.querySelector("#result").innerHTML)
+            document.querySelector("#result").innerHTML += "="
         }
 
         // historico
