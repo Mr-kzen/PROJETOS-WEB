@@ -5,13 +5,20 @@
  * Lembrando que o numero muda se o caracter especial não for escolhido ou ele não for apagado
  * A tela tem a finalidade de mostrar o que o usuário está fazendo
 */
+function funcoes(click){//funções especiais utilizados para realizar a soma ou a subtração
+    const resultado = document.querySelector("#result").innerHTML
+    
+    if(resultado.search("=") >= 0){
+        document.querySelector("#result").innerHTML = document.querySelector("#resultclick").innerHTML + click
+    }else{
+        document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML + click
+    }
 
-const valor = 0
-const caracter = ['+', '-', '*', '/']
+    document.querySelector("#resultclick").innerHTML = ""
+
+}
 
 function calcular(click) {// imprime o que está sendo feito!
-
-    const resultado = document.querySelector("#resultclick").innerHTML
 
     if (click == ".") {
         click = `,`
@@ -22,83 +29,87 @@ function calcular(click) {// imprime o que está sendo feito!
     }
 
     if (document.querySelector("#result").innerHTML.search('=') >= 0) {
-        document.querySelector("#result").innerHTML = ""
-        document.querySelector("#resultclick").innerHTML = ""
+            clean('c')
+    
+            document.querySelector("#resultclick").innerHTML += click
     }
 
-    if(click == "xQd"){
-        document.querySelector("#result").innerHTML += "sqr( "+ document.querySelector("#resultclick").innerHTML + " )="
-        resultado = Number(resultado) * Number(resultado)
-        document.querySelector("#resultclick").innerHTML = resultado.toFixed(15)
-    } 
-    else if(click == "pct"){
-        if(document.querySelector("#result").innerHTML != "" ){
-            document.querySelector("#resultclick").innerHTML = document.querySelector("#resultclick").innerHTML / 100
-            document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML
-        }else{
-            document.querySelector("#result").innerHTML = "0"
-            document.querySelector("#resultclick").innerHTML = "0"
-        }
-    } 
-    else if(click == "1/x"){
-        document.querySelector("#result").innerHTML += "1/( "+ document.querySelector("#resultclick").innerHTML + " )="
-
-        document.querySelector("#resultclick").innerHTML = (1 / parseFloat(resultado)).toFixed(15)
-    }
-    else if (click == "raiz2") {
-
-        document.querySelector("#result").innerHTML += "raiz( "+ document.querySelector("#resultclick").innerHTML + " )="
-        document.querySelector("#resultclick").innerHTML = Math.sqrt(Number(resultado))
-    }else if (click == "+" || click == "-" || click == "x" || click == "/") {
-        document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML + click
-        document.querySelector("#resultclick").innerHTML = ""
-    }else if (click) {
+    if (click) {
         document.querySelector("#resultclick").innerHTML += click
     }
 }
 
 function igual() {//retorna o resultado final
+    document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML
 
-    const resultado = document.querySelector("#result").innerHTML
-
+    resultado = document.querySelector("#result").innerHTML
+    
     resultado.replace(",", ".");
     resultado.replace("x", "*")
 
     if (resultado) {
-        if (resultado.search("raiz") >= 0 || resultado.search("1/") >= 0) {
+        if (resultado.search("r") >= 0 || resultado.search("/") >= 0){
 
-        } else {
-            document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML
-            console.log(document.querySelector("#result").innerHTML)
-            document.querySelector("#resultclick").innerHTML = eval(document.querySelector("#result").innerHTML)
+        }else {            
+            document.querySelector("#resultclick").innerHTML = eval(resultado)
             document.querySelector("#result").innerHTML += "="
         }
-
         // historico
-
-        //-- Criando os elementos que serão inseridos
-
-        const container = document.querySelector(".historico")
-
-        const novaDiv = document.createElement("div")
-
-        const p1 = document.createElement("p")
-        p1.appendChild(document.createTextNode(resultado))
-        novaDiv.appendChild(p1)
-
-        const p2 = document.createElement("p")
-        p2.appendChild(document.createTextNode(document.querySelector("#resultclick").innerHTML))        
-        novaDiv.appendChild(p2)
-
-        container.appendChild(novaDiv)
-
-        document.querySelector("#historicos").classList.add('sr-only')
-        novaDiv.classList.add('historicos')
+        return historico()
     }
     else {
         document.querySelector("#resultclick").innerHTML = ""
     }
 }
+
+function especiais(click){
+
+    resultado = document.querySelector("#resultclick").innerHTML
+
+    if(click == "xQd"){
+        document.querySelector("#result").innerHTML += "sqr( "+ document.querySelector("#resultclick").innerHTML + " )="
+        resultado = Number(resultado) * Number(resultado)
+        document.querySelector("#resultclick").innerHTML = resultado
+    }
+    
+    if(click == "pct"){
+
+        if(document.querySelector("#result").innerHTML != "" ){
+            console.log("yes")
+            document.querySelector("#resultclick").innerHTML = parseFloat(document.querySelector("#resultclick").innerHTML / 100)
+            document.querySelector("#result").innerHTML += document.querySelector("#resultclick").innerHTML
+        
+        }
+    } 
+    
+    if(click == "1/x"){
+
+        const somar = parseFloat(document.querySelector("#resultclick").innerHTML);
+
+        document.querySelector("#result").innerHTML += "1/( "+ document.querySelector("#resultclick").innerHTML + " )="
+
+        if((1 / somar) == "NaN"){
+
+            document.querySelector("#resultclick").innerHTML = "1"
+        
+        }else{
+
+            document.querySelector("#resultclick").innerHTML = (1 / somar).toFixed(15)
+        
+        }
+
+    }
+    
+    if (click == "raiz2") {
+
+        document.querySelector("#result").innerHTML += "raiz( "+ document.querySelector("#resultclick").innerHTML + " )="
+        document.querySelector("#resultclick").innerHTML = Math.sqrt(Number(document.querySelector("#resultclick").innerHTML))
+    
+    }
+}
+
+
+
 
 function clean(botao) {
 
@@ -114,4 +125,25 @@ function clean(botao) {
     else if (botao == "ce") {
         document.querySelector("#resultclick").innerHTML = ""
     }
+}
+
+function historico(){
+
+    //-- Criando os elementos que serão inseridos
+
+    const container = document.querySelector(".historico")
+    const novaDiv = document.createElement("div")
+
+    const p1 = document.createElement("p")
+    p1.appendChild(document.createTextNode(document.querySelector("#result").innerHTML))
+    novaDiv.appendChild(p1)
+
+    const p2 = document.createElement("p")
+    p2.appendChild(document.createTextNode(document.querySelector("#resultclick").innerHTML))        
+    novaDiv.appendChild(p2)
+
+    container.appendChild(novaDiv)
+
+    document.querySelector("#historicos").classList.add('sr-only')
+    novaDiv.classList.add('historicos')
 }
