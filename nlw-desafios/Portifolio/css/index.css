@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+:root{
+    --cor-de-fundo: rgba(34, 33, 44, 100%);
+    --fundo-retangulo: rgba(48, 47, 61, 100%)
+}
+
+.cards{
+    background-color: var(--fundo-retangulo);
+}
+
+main{
+    width: 100vw;
+    height: auto;
+
+    background-color: var(--cor-de-fundo);
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.cards-sobre{
+    width: 80%;
+    height: auto;
+
+    padding: 1.2rem;
+    margin: 2rem auto;
+
+    border-radius: 20px;
+}
