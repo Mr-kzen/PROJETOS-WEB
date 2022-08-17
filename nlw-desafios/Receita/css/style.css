@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+
+    border: none;
+}
+.receita{
+    margin: .9rem 0 0 3rem;
+}
+h2{
+    margin: 1rem 0;
+}
+/* ******************************************* */
+.imagem-receita{
+    display: flex;
+    flex-direction: column;
+}
+.imagem-receita h2{
+    margin: 1.5rem;
+}
+.img-item{
+    width: 80%;
+    
+    margin: 0 auto;
+    position: relative;
+
+    overflow: hidden;
+}
+.img-item img{
+    width: 100%;
+}
+.img-item p{
+    width: 100%;
+    
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+
+    padding: .5rem;
+
+    position: absolute;
+    bottom: 4px;
+}
+
+/* ******************************************* */
+
+.list{
+    margin: 0 0 0 2.5rem;
+}
+
+/* ******************************************* */
+
+.inf-adc{
+    line-height: 2rem;
+
+    margin-bottom: 1rem;
+}
