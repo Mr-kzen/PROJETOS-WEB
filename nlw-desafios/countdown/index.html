@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN</title>
+
+
+    <!-- icones -->
+    <link rel="shortcut icon" href="./img/stopwatch-fill.svg" type="image/x-icon">
+
+    <!-- stylos -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- script -->
+    <script type="module" src="./script/script.js"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="img-toop">
+        <img src="./img/top-image.svg" rsc="Imagem toop" />
+    </header>
+
+
+    <main class="ctn-princ">
+
+        <div class="left">
+
+            <h2>Pronto para lançar em...</h2>
+
+            <div class="time">
+                <ul>
+                    <li>
+                        <p>Dia(s)</p>
+
+                        <span data-time>00</span>
+                    </li>
+
+                    <li>
+                        <p>Hora(s)</p>
+
+                        <span data-time>00</span>
+                    </li>
+
+                    <li>
+                        <p>Minuto(s)</p>
+
+                        <span data-time>00</span>
+                    </li>
+
+                    <li>
+                        <p>Segundo(s)</p>
+
+                        <span data-time>00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p>Inscreva-se para saber mais sobre o lançamento</p>
+
+            <button class="buttom btn-form">Increva-se</button>
+        </div>
+
+        <div class="rigth">
+            <img src="./img/rocket.svg" alt="foguete Rocket">
+        </div>
+    </main>
+
+
+    <footer class="img-bootom">
+        <img src="./img/bottom-image.svg" rsc="Imagem bottom" />
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+        <div class="formulario close">
+
+            <div class="btn-close">
+                <img src="./img/x-square.svg" alt="btn close" />
+            </div>
+
+            <h2>Increva-se para ficar por dentro do lançamento!</h2>
+            
+            <form action="">
+                <label for="nome">
+                    Nome Completo:
+                </label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome!" maxlength="50" required />
+        
+        
+                <label for="contato">
+                    Telefone:
+                </label>
+                <input type="number" name="contato" id="contato" placeholder="Digite seu Telefone!" pattern="([0-9]).{11,}" title="O seguinte campo só aceita numeros e caracteres especiais como '( ) . -'" required />
+        
+        
+                <label for="email">
+                    Email:
+                </label>
+                <input type="email" name="email" id="email" placeholder="Digite seu Email!" required/>
+        
+        
+                <button value="Enviar" class="buttom">Enviar</button>
+        
+            </form>
+        
+        </div>
+
+</body>
+</html>
