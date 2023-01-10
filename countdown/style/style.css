@@ -1,0 +1,276 @@
+/* ------------------RAIZ-------------------- */
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --black: #4D4C59;
+    --purple: #6C63FF;
+    --light-grey: #C8C8C8;
+    --text-color: #9C9AB6;
+  }
+
+body{
+    position: relative;
+}
+/* -------------------GERAL------------------- */
+.buttom{
+    padding: .6rem 2rem;
+
+    background-color: var(--purple);
+    color: #ffff;
+
+    font-size: 1rem;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+h2{
+    font-weight: bold;
+    font-size: 2.2em;
+
+    color: var(--purple);
+}
+/* ------------------OUTROS-------------------- */
+.ctn-princ{
+    width: 100vw;
+    max-width: 100vw;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.img{
+    width: 100%;
+    height: calc(100vh / 5);
+}
+.topImg{
+    background-image: url('../img/top-image.svg');
+    background-repeat: no-repeat;
+
+    background-position: center;
+    background-size: cover;
+}
+.bottomImg{
+    background-image: url('../img/bottom-image.svg');
+}
+
+
+
+.container{
+    max-width: 100%;    
+
+    display: flex;
+    justify-content: space-between;
+    
+    background-color: transparent;
+}
+
+
+
+.countdown{    
+    text-align: center;
+
+    display: grid;
+    place-items: center;
+}
+
+.countdown p{
+    color: var(--light-grey)
+}
+
+
+
+
+.time ul{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+.time ul li{
+    margin: 0 2rem;
+
+    list-style: none;
+    line-height: 3.5rem;
+}
+.time ul li span{
+    font-size: 3.5rem;
+}
+
+
+
+
+
+
+.rigth img{
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+
+
+
+/* ------------------formulario-------------------- */
+
+.formulario{
+    position: absolute;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: hsla(0, 0%, 0%, 0.945);
+
+    display: grid;
+    place-items: center;
+}
+.btn-close img{
+    width: 40px;
+    height: 40px;
+
+    background: var(--purple);
+    
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+
+    cursor: pointer;
+}
+
+.formulario form{
+    width: 50%;
+
+    display: grid;
+    grid-template-rows: calc(1fr * 4);
+    
+    margin-top: 3rem;
+
+    color: var(--text-color);
+}
+
+.formulario form input{
+    width: 90%;
+
+    margin-bottom: 1rem;
+    padding: 5px 10px;
+
+    border-bottom: 1px solid var(--purple);
+    border-radius: 10px;
+    
+    color: var(--purple);
+    background-color: transparent;
+
+    font-size: 16px;
+
+    outline: none;
+}
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+ 
+ }
+
+.button{
+    width: 160px;
+
+    margin: 2rem auto;
+}
+
+.close{
+    display: none;
+}
+
+
+
+
+
+
+
+/* Adicionando tempo */
+
+.containerTimer{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+
+    background: hsla(0, 0%, 0%, 0.945);
+
+    z-index: 10;
+
+    display: grid;
+    place-items: center;
+}
+
+.painelTimer{
+    width: 30%;
+
+    text-align: center;
+}
+.painelTimer h2{
+    margin: 0 0 2rem;
+}
+.inputTimer{
+    width: 80%;
+
+    margin: 0 auto;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    background: white;
+
+    color: var(--purple);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.painelTimer input{
+    width: 15rem;
+    background: transparent;
+
+    border: none;
+
+    margin: 0 .5rem;
+
+    outline: none;
+}
+.comentario{
+    color: var(--purple);
+
+    margin-top: 1rem;
+}
+.painelTimer button{
+    border-radius: 10px;
+
+    padding: 10px;
+
+    background: white;
+
+    color: var(--purple);
+
+    font-size: 1rem;
+
+    cursor: pointer;
+}
