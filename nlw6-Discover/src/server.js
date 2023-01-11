@@ -15,6 +15,7 @@ const server = express()
  
 server.set('view engine', 'ejs') //express a nossa view vai ser a extensão ejs
 server.set('views', path.join(__dirname, 'views'))
+
 server.use(express.static("Public")); //Server, utilize os arquivos que estão dentro dessa pasta
 
 
