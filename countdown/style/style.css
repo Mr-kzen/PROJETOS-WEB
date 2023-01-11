@@ -18,18 +18,30 @@ body{
     position: relative;
 }
 /* -------------------GERAL------------------- */
-.buttom{
+.btnPadrao{
     padding: .6rem 2rem;
-
-    background-color: var(--purple);
-    color: #ffff;
 
     font-size: 1rem;
 
     border-radius: 10px;
 
     cursor: pointer;
+
+    width: 160px;
+
+    margin: 2rem auto;
 }
+.btn1{
+    background-color: var(--purple);
+
+    color: #ffff;
+}
+.btn2{
+    background: white;
+
+    color: var(--purple);
+}
+
 
 
 h2{
@@ -187,12 +199,6 @@ input[type=number] {
  
  }
 
-.button{
-    width: 160px;
-
-    margin: 2rem auto;
-}
-
 .close{
     display: none;
 }
@@ -260,17 +266,4 @@ input[type=number] {
     color: var(--purple);
 
     margin-top: 1rem;
-}
-.painelTimer button{
-    border-radius: 10px;
-
-    padding: 10px;
-
-    background: white;
-
-    color: var(--purple);
-
-    font-size: 1rem;
-
-    cursor: pointer;
 }
