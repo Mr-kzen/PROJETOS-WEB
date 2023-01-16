@@ -32,29 +32,4 @@ li.forEach((event) => {
     
     
   })
-  
- 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//ativando painel para novo cronometro
-
-const newCro = document.querySelectorAll(".adc")
-
-newCro.addEventListener("click", () => {
-  
 })

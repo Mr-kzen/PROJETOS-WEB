@@ -146,6 +146,10 @@ main {
     font-size: 3rem;
 }
 
+.timer ul{
+    display: flex;
+}
+
 /*Açoes*/
 
 .acao {
@@ -239,27 +243,36 @@ main {
     margin: 0 auto;
 
     box-shadow: 0 2px 0 0 #76b9ed;
-}
-
-.addTimer ul {
-    width: 100%;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
 
+.addTimer input {
+    width: 6rem;
+    
     font-size: 3rem;
     font-weight: bold;
 
     padding: 10px;
-}
 
-.addTimer ul li {
-    margin: 0 15px;
+    text-align: center;
+
+    background-color: transparent;
+
+    border: none;
+
+    outline: none;
 
     padding: 10px;
 
     border-radius: 4px;
+
+    color: #fff;
+}
+.addTimer span{
+    font-size: 4rem;
 }
 
 .timerSelection {
@@ -300,7 +313,7 @@ main {
     margin-right: .5rem;
 }
 
-.input input {
+.NameCronometro input {
     width: 80%;
     border: none;
 
@@ -309,9 +322,10 @@ main {
 
     padding: .5em;
     background: transparent;
+    outline: none;
 }
 
-.newName .input {
+.newName .NameCronometro {
     width: 90%;
 
     background: var(--background-second);

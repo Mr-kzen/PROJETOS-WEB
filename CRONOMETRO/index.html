@@ -8,7 +8,13 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="./index.js"></script>
+
+
+
+
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/timer.js"></script>
+
 </head>
 
 <body>
@@ -32,12 +38,12 @@
                 <div class="topo">
                     <h3 class="title">Cronômetro (1)</h3>
 
-                    <div class="menu">
+                    <!-- <div class="menu">
 
                         <p class="menus">U</p>
                         <p class="menus">R</p>
 
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -45,7 +51,13 @@
                     <div class="border-timer">
                         <div class="timer">
                             <ul>
-                                <li>00:10:00</li>
+                                <li class="timerList hours">20</li>
+                                <span>:</span>
+
+                                <li class="timerList minutes">1</li>
+                                <span>:</span>
+
+                                <li class="timerList seconds">03</li>
                             </ul>
                         </div>
                     </div>
@@ -69,37 +81,35 @@
 
 
 
-        <div class="newPost newPostCancel">
+        <div id="newPost" class="newPost newPostCancel">
 
             <div class="painel">
                 <h2>Adicionar novo temporizador</h2>
 
                 <div class="controls">
-                    <span>P</span>
-                    <span>P</span>
-                    <span>P</span>
+                    <span class="btnNewCronometro adicionar hours">P</span>
+                    <span class="btnNewCronometro adicionar minutes">P</span>
+                    <span class="btnNewCronometro adicionar seconds">P</span>
                 </div>
 
                 <div class="addTimer">
-                    <ul>
-                        <li class="hour">
-                            <span data-selection>00</span>
-                        </li>
-                        <p>:</p>
-                        <li class="minute">
-                            <span data-selection>00</span>
-                        </li>
-                        <p>:</p>
-                        <li class="seconts">
-                            <span data-selection>00</span>
-                        </li>
-                    </ul>
+                    <div>
+                        <input type="text" placeholder="00" class="inputHour">
+                    </div>
+                    <span>:</span>
+                    <div>
+                        <input type="text" placeholder="00" class="inputMinutes">
+                    </div>
+                    <span>:</span>
+                    <div>
+                        <input type="text" placeholder="00" class="inputSeconts">
+                    </div>
                 </div>
 
                 <div class="controls">
-                    <span>P</span>
-                    <span>P</span>
-                    <span>P</span>
+                    <span class="btnNewCronometro remover hours">P</span>
+                    <span class="btnNewCronometro remover minutes">P</span>
+                    <span class="btnNewCronometro remover seconds">P</span>
                 </div>
 
 
@@ -110,11 +120,8 @@
 
                         <label><i>i</i></label>
 
-                        <div class="input">
+                        <div class="NameCronometro">
                             <input type="text" placeholder="Cronometro (1)" />
-
-                            <icon>x</icon>
-
                         </div>
 
 
@@ -134,13 +141,13 @@
                         <buttom>Salvar</buttom>
                     </div>
 
-                    <div class="align btn btn_cancelar">
+                    <div class="align btn btn_cancelar btnNewCronometro cancelar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-x-lg" viewBox="0 0 16 16">
                             <path
                                 d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                         </svg>
-                        <buttom> Cancelar </buttom>
+                        <buttom class=""> Cancelar </buttom>
                     </div>
                 </div>
 
