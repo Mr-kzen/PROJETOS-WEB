@@ -43,44 +43,62 @@ controlsTimer.forEach(inputsTimer => {
                     if (Hour) {
                         if (inputsTimer.classList.contains('inputHour')) {
                             inputsTimer.value = meuValor + 1
+
+                            inputsTimer.value = formateNumber(inputsTimer.value)
+
                         }
 
                     } else if (minutes) {
                         if (inputsTimer.classList.contains('inputMinutes')) {
                             inputsTimer.value = meuValor + 1
+
+                            inputsTimer.value = formateNumber(inputsTimer.value)
                         }
                     } else {
                         if (inputsTimer.classList.contains('inputSeconts')) {
                             inputsTimer.value = meuValor + 1
+
+                            inputsTimer.value = formateNumber(inputsTimer.value)
                         }
                     }
 
-                } if(cancelar){
-                    const inputName = document.querySelector('.NameCronometro input')
-
-                    inputsTimer.value = ''
-                    inputName.value = ''
-
-
-                    telaNewCronometro.classList.add("newPostCancel")
-
-
-                }
-                else {
+                } else{
                     if (Hour) {
                         if (inputsTimer.classList.contains('inputHour')) {
                             inputsTimer.value = meuValor - 1
+
+                            inputsTimer.value = formateNumber(inputsTimer.value)
                         }
 
                     } else if (minutes) {
                         if (inputsTimer.classList.contains('inputMinutes')) {
                             inputsTimer.value = meuValor - 1
+
+                            inputsTimer.value = formateNumber(inputsTimer.value)
                         }
                     } else {
                         if (inputsTimer.classList.contains('inputSeconts')) {
                             inputsTimer.value = meuValor - 1
+
+                            inputsTimer.value = formateNumber(inputsTimer.value)
                         }
                     }
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                if(cancelar){
+                    
+                    windowTimer(inputsTimer);
+
                 }
 
         })
@@ -95,88 +113,164 @@ controlsTimer.forEach(inputsTimer => {
 
 
 
+function formateNumber(number){
+    if(number < 10 & number >= 0){
+        return (`0` + number)
+    }
 
-// iniciando o formulario
-
-const start = window.document.querySelector('.start')
-
-
-let cardContainer = document.querySelectorAll('.container-cards')
-// const hours = document.querySelectorAll('.timer .hours')
-// const minutes = document.querySelectorAll('.timer .hours')
+}
 
 
 
+function reTimer(horas, minutes, seconts){
+    if(horas){
 
-let minutes = false
-let seconds = false
-let hora = false
+    }else if(minutes){
 
-start.addEventListener('click', () => {
-    const temporizador = document.querySelectorAll('.timerList')
+    }else if(seconts){
 
-    temporizador.forEach(timer => {
+    }
+}
 
-        let tempo = Number(timer.innerHTML)
 
-        let isHours = timer.classList.contains('hours')
-        let isMinutes = timer.classList.contains('minutes')
-        let isSeconds = timer.classList.contains('seconds') 
 
-        // console.log(tempo)
 
+function windowTimer(inputTimer){
+    const inputName = document.querySelector('.NameCronometro input')
+
+    inputTimer.value = ''
+    inputName.value = ''
+
+
+    telaNewCronometro.classList.add("newPostCancel")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Pegando o valor inserido pelo usuário e criando card com o timer!
+
+//criar novo card assim que o botão salvar for clicado
+
+
+const save = document.querySelector(".btn_salve")
+
+
+save.addEventListener("clik", () => {
+
+
+    //criar novo card e inserir os valores de acordo com o usuário
+
+    //pegando a div pai e adicionando os filhos
+
+    //container = pai
+    const container = document.querySelector(".container")
+
+
+
+    //.container-cards = filho de container
+    const newDiv = document.createElement("div")
+    container.appendChild(newDiv)
+    newDiv.classList.add('container-card')
+
+    //pai containerCard
+    const cardContainer = document.querySelector(".container-card")
+    //h3 class=title = filho de .topo
+
+    for(var i=0; i <= 2; i++){
+        cardContainer.appendChild(newDiv)
         
-        
-        
+        if(i=0){
+            //.topo = filho de container-cards
+            newDiv.classList.add('topo')
 
-        if(isSeconds){
-            if(tempo == 2){
-                seconds = true
-            }
-            if(tempo <= 1){
-                tempo = 60   
-            }
+            const title = document.createElement('h3')
+            const text = document.createTextNode(inputName)
+
+            title.appendChild(text)
+
+            const topo = document.querySelector('.topo')
+            topo.appendChild(titulo) 
+        }else if(i=2){
+            //temporizador = filho de container
+            newDiv.classList.add('temporizador')
+
+            const temporizador = document.querySelector(".tmeporizador")
+            temporizador.appendChild(newDiv)
+            newDiv.classList.add('border-timer')
+
+            const borderTimer = document.querySelector(".border-timer")
+            borderTimer.appendChild(newDiv)
+            newDiv.classList.add("timer")
+
+            //border-timer = filho de temporizador
+            const timer = document.querySelector(".timer")
+            const ul = createElement('ul')
+            timer.appendChild(ul)
+
+            //li filho de temporizador
+            const timerUl = document.querySelector(".timer ul")
+            const li = createElement('li')
+
+            timerUl.appendChild(li)
+            timerUl.classList.add("timerlist hours")
+            timerUl.value = inputHour.value
+
+            timerUl.appendChild(li)
+            timerUl.classList.add("timerlist minutes")
+            timerUl.value = inputminutes.value
+
+            timerUl.appendChild(li)
+            timerUl.classList.add("timerlist seconds")
+            timerUl.value = inputseconds.value
+
+        }else{
+            //.acao = filho de container
+            newDiv.classList.add('acao')
             
-            timer.innerHTML = tempo - 1
-        }
-        
-        if(seconds){
-
-            if(isMinutes){
-                if(tempo == 1){
-                    minutes = true
-                }
-                if(tempo <= 1){
-                    tempo = 60
-                }
-
-                timer.innerHTML = tempo -1
-                
-                seconds = false
-            }
-
+            const action = document.querySelector('.acao')
+            const svg = createElement('svg')
             
+            action.appendChild(svg)
+            timerUl.classList.add("start")
 
+            action.appendChild(svg)
+            timerUl.classList.add("pause or")
 
+            action.appendChild(svg)
+            timerUl.classList.add("redefenir")
         }
+    }
 
-        if(seconds = true  minutes = true){
 
-            if(isHours){
-
-                timer.innerHTML = tempo - 1
-
-                minutes = false
-    
-            }
-
-        }
-    })
+    //fechar janela
+    windowTimer()
 })
 
 
 
-// console.log(seconts)
 
 
 
@@ -184,9 +278,5 @@ start.addEventListener('click', () => {
 
 
 
-
-
-// cardContainer.forEach(cardsContainer => {
-// })
-
+//formulario, configurand o tempo
 
